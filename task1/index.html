@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money tracker</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2862b9c025.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- linking css file -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- navigation container -->
+    <div class="navigation animate__animated animate__bounce">
+      <div class="container">
+        <div class="row">
+          <nav>
+            <span class="navbar-brand mb-0 h1">Money Tracker</span>
+            <ul>
+              <li>
+                <a
+                  id="nav_link"
+                  href="#Home"
+                  class="active"
+                  onclick="navigateTo('Home', event)"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  id="nav_link"
+                  href="#Features"
+                  onclick="navigateTo('Features', event)"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  id="nav_link"
+                  href="#Pricing"
+                  onclick="navigateTo('Pricing', event)"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  id="nav_link"
+                  href="#Testimonials"
+                  onclick="navigateTo('Pricing', event)"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  id="nav_link"
+                  href="#Team"
+                  onclick="navigateTo('About', event)"
+                  >Team</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- home container -->
+    <div class="home_container" id="Home">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 left" data-aos="fade-right">
+            <h1 class="title">Money Lover</h1>
+            <h5 class="subtitle">
+              Money Lover Simplest way to manage personal finances. Because
+              money matters.
+            </h5>
+            <div class="button_download">Download Now</div>
+          </div>
+          <div class="col-sm-6 right">
+            <div class="bg_style" data-aos="fade-left">
+              <div class="circle1"></div>
+              <div class="circle2"></div>
+              <div class="circle3"></div>
+              <img src="./assets/save_money.png" class="home_img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- features container -->
+    <div class="features_container" id="Features">
+      <div class="container">
+        <div class="features_title_container">
+          <h4 class="f_subtitle">What we do?</h4>
+          <h1 class="f_title">Why you should choose us</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="f_list" data-aos="fade-right">
+              <div class="f_component">
+                <div class="f_comp_title">Simple to use</div>
+                <div class="f_comp_description">
+                  It takes seconds to record daily transactions. Put them into
+                  clear and visualized categories such as Expense: Food,
+                  Shopping or Income: Salary, Gift.
+                </div>
+              </div>
+              <div class="f_component">
+                <div class="f_comp_title">Friendly UI</div>
+                <div class="f_comp_description">
+                  It takes seconds to record daily transactions. Put them into
+                  clear and visualized categories such as Expense: Food,
+                  Shopping or Income: Salary, Gift.
+                </div>
+              </div>
+              <div class="f_component">
+                <div class="f_comp_title">Acurate insights</div>
+                <div class="f_comp_description">
+                  It takes seconds to record daily transactions. Put them into
+                  clear and visualized categories such as Expense: Food,
+                  Shopping or Income: Salary, Gift.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6" data-aos="fade-left">
+            <img src="https://moneylover.me/images/cash-book.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- pricing -->
+    <div class="pricing_container" id="Pricing">
+      <div class="container">
+        <div class="p_main_title">Pricing</div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="p_card" data-aos="flip-left" data-aos-delay="300">
+              <div class="p_card_top">
+                <h2 class="p_title">Free</h2>
+                <h1 class="p_price">$0</h1>
+                <h3 class="p_duration">Unlimited</h3>
+                <div class="p_button">Get started</div>
+              </div>
+              <div class="p_list">
+                <span class="p_list_item">
+                  <i class="fas fa-check"></i> 250 entries</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 10 reports</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 10 recommendations</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 5 charts</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-times"></i> No notifications</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-times"></i> No custom categories</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="p_card" data-aos="flip-up" data-aos-delay="300">
+              <div class="p_card_top">
+                <h2 class="p_title">Gold</h2>
+                <h1 class="p_price">$19</h1>
+                <h3 class="p_duration">Yearly</h3>
+                <div class="p_button">Get started</div>
+              </div>
+              <div class="p_list">
+                <span class="p_list_item">
+                  <i class="fas fa-check"></i> 1000 entries</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 200 reports</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 50 recommendations</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 25 charts</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> SMS notifications</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 5 custom categories</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="p_card" data-aos="flip-up" data-aos-delay="300">
+              <div class="p_card_top">
+                <h2 class="p_title">Diamond</h2>
+                <h1 class="p_price">$25</h1>
+                <h3 class="p_duration">Yearly</h3>
+                <div class="p_button">Get started</div>
+              </div>
+              <div class="p_list">
+                <span class="p_list_item">
+                  <i class="fas fa-check"></i> 10,000 entries</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 1,000 reports</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> Every day recommendations</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> 205 charts</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> Email/SMS notifications</span
+                >
+                <span class="p_list_item"
+                  ><i class="fas fa-check"></i> Unlimited categories</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- testimonials container -->
+    <div class="testimonials_container" id="Testimonials">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6" data-aos="fade-right">
+            <h1 class="t_title">Read what our customers love about us</h1>
+            <h4 class="t_short">
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form, by
+              injected humour, or randomised words which don't look even
+              slightly believable.<br /><br />
+              If you are going to use a passage of Lorem Ipsum, you need to be
+              sure there isn't anything embarrassing hidden in the middle of
+              text.
+            </h4>
+            <div class="read_more">Read more</div>
+          </div>
+          <div class="col-sm-6">
+            <div class="t_container">
+              <div class="t_card" data-aos="fade-left" data-aos-delay="200">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpX-CIEliwCQf3b_V8qSLCaTVx-9Lnq76JHQ&usqp=CAU"
+                  class="t_img"
+                  alt=""
+                />
+                <div>
+                  <div class="t_testimonial">
+                    Product testimonials are ideal for overcoming objections or
+                    hesitations a potential buyer might have. Placing these
+                    testimonials on the product page or a similar landing page
+                  </div>
+                  <div class="t_name">Somesh Somani</div>
+                </div>
+              </div>
+              <div class="t_card" data-aos="fade-left" data-aos-delay="250">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpX-CIEliwCQf3b_V8qSLCaTVx-9Lnq76JHQ&usqp=CAU"
+                  class="t_img"
+                  alt=""
+                />
+                <div>
+                  <div class="t_testimonial">
+                    Product testimonials are ideal for overcoming objections or
+                    hesitations a potential buyer might have. Placing these
+                    testimonials on the product page or a similar landing page
+                  </div>
+                  <div class="t_name">Somesh Somani</div>
+                </div>
+              </div>
+              <div class="t_card" data-aos="fade-left" data-aos-delay="300">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpX-CIEliwCQf3b_V8qSLCaTVx-9Lnq76JHQ&usqp=CAU"
+                  class="t_img"
+                  alt=""
+                />
+                <div>
+                  <div class="t_testimonial">
+                    Product testimonials are ideal for overcoming objections or
+                    hesitations a potential buyer might have. Placing these
+                    testimonials on the product page or a similar landing page
+                  </div>
+                  <div class="t_name">Somesh Somani</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- team container -->
+    <div class="team_container" id="Team">
+      <div class="container">
+        <div class="team_title">Our Team</div>
+        <div class="team_subtitle">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book
+        </div>
+        <div class="swiper mySwiper">
+          <div class="t_member_container swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="team_card">
+                <img
+                  src="https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2017/03/28/Local-Politics/Images/Supreme_Court_Gorsuch_Moments_22084-70c71-0668.jpg?t=20170517"
+                  alt=""
+                  class="t_member_img"
+                />
+                <div class="team_member_info">
+                  <div class="t_member_name">Patty O'Furniture</div>
+                  <div class="t_member_position">UI developer</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="team_card">
+                <img
+                  src="https://api.time.com/wp-content/uploads/2014/05/166259035.jpg?w=824&quality=70"
+                  alt=""
+                  class="t_member_img"
+                />
+                <div class="team_member_info">
+                  <div class="t_member_name">Olive Yew</div>
+                  <div class="t_member_position">Front end developer</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="team_card">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvatlV1XCcuZ0wY_o4_EzNOspCKy1DH0_9aQ&usqp=CAU"
+                  alt=""
+                  class="t_member_img"
+                />
+                <div class="team_member_info">
+                  <div class="t_member_name">Aida Bugg</div>
+                  <div class="t_member_position">Backend developer</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="team_card">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2RHj5aBArvQQQtkpqkJU3MzDrr2ji2rg00w&usqp=CAU"
+                  alt=""
+                  class="t_member_img"
+                />
+                <div class="team_member_info">
+                  <div class="t_member_name">Maureen Biologist</div>
+                  <div class="t_member_position">Marketing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="update_container">
+      <div class="container" data-aos="zoom-in-down">
+        <div class="u_heading">Get the latest app updates</div>
+        <div class="u_short">
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don't look even slightly believable.
+        </div>
+        <div class="u_comp">
+          <div class="u_container">
+            <i class="fas fa-envelope u_icon"></i>
+            <input
+              type="email"
+              class="u_input"
+              placeholder="Enter your email address"
+              name="email"
+            />
+            <div class="u_button">Subscribe</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- contact us container -->
+    <div class="contactUs_container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.04360432937!2d73.79292688275116!3d18.524603553440926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635667836115!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        style="border: 0"
+        class="c_map"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+      <div class="c_overlay"></div>
+      <div class="c_main">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6" data-aos="fade-right">
+              <div class="c_title">Contact Us</div>
+            </div>
+            <div class="col-sm-6" data-aos="fade-left">
+              <div class="c_form">
+                <div class="c_form_title">Feedback form</div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  class="c_input"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  class="c_input"
+                />
+                <input
+                  type="number"
+                  name="phone"
+                  placeholder="Phone number"
+                  class="c_input"
+                />
+                <input
+                  type="text"
+                  name="message"
+                  placeholder="Message"
+                  class="c_input"
+                />
+                <div class="send_msg">Send message</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer container -->
+    <div class="footer_container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="features_list">
+              <div class="f_list_title">Money Tracker</div>
+              <div class="f_list_contents">
+                <span class="f_items"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="features_list">
+              <div class="f_list_title">Services</div>
+              <div class="f_list_contents">
+                <span class="f_items">Money tracker</span>
+                <span class="f_items">Budget app</span>
+                <span class="f_items">Blog</span>
+                <span class="f_items">Contact us</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="features_list">
+              <div class="f_list_title">Sitemap</div>
+              <div class="f_list_contents">
+                <span class="f_items">About us</span>
+                <span class="f_items">Services</span>
+                <span class="f_items">Blog</span>
+                <span class="f_items">Contact us</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="features_list">
+              <div class="f_list_title">Legal</div>
+              <div class="f_list_contents">
+                <span class="f_items">Terms and conditions</span>
+                <span class="f_items">Privacy Policy</span>
+                <span class="f_items">Terms of Use</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_subtitle">@2021 rights reserved. Somesh Somani</div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./index.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        // loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

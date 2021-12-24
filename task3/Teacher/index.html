@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- meta tag to reflect local changes  -->
+    <meta http-equiv="Cache-control" content="no-cache" />
+
+    <title>Teacher dashboard</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2862b9c025.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- style file -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container-fluid main">
+      <div class="sidebar">
+        <div class="brand_container">
+          <div class="brand">
+            <i class="fab fa-audible logo"></i>
+            <div class="brand_name">EDU</div>
+          </div>
+          <i class="fas fa-bars" id="menu"></i>
+        </div>
+        <ul class="nav_list">
+          <li>
+            <a href="#" onclick="display(0)">
+              <i class="fas fa-th-large"></i>
+              <span class="link_name">Dashboard</span>
+            </a>
+            <span class="tip">Dashboard</span>
+          </li>
+          <li>
+            <a href="#" onclick="display(1)">
+              <i class="fas fa-poll"></i>
+              <span class="link_name">Result</span>
+            </a>
+            <span class="tip">Result</span>
+          </li>
+          <li>
+            <a href="#" onclick="display(2)">
+              <i class="fas fa-swatchbook"></i>
+              <span class="link_name">Courses</span>
+            </a>
+            <span class="tip">Courses</span>
+          </li>
+          <li>
+            <!-- <a href="#" onclick="display(3)">
+              <i class="fas fa-info"></i>
+              <span class="link_name">Information</span>
+            </a>
+            <span class="tip">Information</span>
+          </li> -->
+          </li>
+
+          <li class="logout">
+            <a href="#">
+              <i class="fas fa-power-off" onclick="logout()"></i>
+              <span class="link_name">Logout</span>
+            </a>
+            <span class="tip">Logout</span>
+          </li>
+        </ul>
+        <!-- <div class="logout">
+          <i class="fas fa-power-off logout_icon"></i>
+          <span class="logout_text">Logout</span>
+        </div> -->
+      </div>
+      <div class="right">
+        <!-- dashboard component -->
+        <div class="dashboard" id="component">
+          <!-- <div class="d_user_box">
+            <img
+              src="https://i.pinimg.com/550x/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg"
+              class="d_user_img"
+              alt=""
+            />
+            <div class="d_user_info">
+              <div class="d_user_name">Somesh Somani</div>
+              <div class="d_user_email">
+                <i class="fas fa-envelope"></i> someshsomani457@gmail.com
+              </div>
+              <div class="d_user_phone">
+                <i class="fas fa-phone-alt"></i> 8080259833
+              </div>
+            </div>
+          </div> -->
+          <div class="d_stats_container">
+            <div class="d_stats_upper">
+              <span class="d_stats_title">Exam: Semester 4</span>
+              <span class="d_stats_time_duration"
+                >21 Oct 2021 - 25 Oct 2021</span
+              >
+            </div>
+            <div class="d_stats_cards_container">
+              <div class="d_stat_card">
+                <div class="d_stat_card_avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="d_stat_card_info">
+                  <span class="d_stat_card_title">Total students</span>
+                  <span class="d_stat_card_count">400</span>
+                </div>
+              </div>
+              <div class="d_stat_card">
+                <div class="d_stat_card_avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="d_stat_card_info">
+                  <span class="d_stat_card_title">Total students</span>
+                  <span class="d_stat_card_count">400</span>
+                </div>
+              </div>
+              <div class="d_stat_card">
+                <div class="d_stat_card_avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="d_stat_card_info">
+                  <span class="d_stat_card_title">Total students</span>
+                  <span class="d_stat_card_count">400</span>
+                </div>
+              </div>
+              <div class="d_stat_card">
+                <div class="d_stat_card_avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="d_stat_card_info">
+                  <span class="d_stat_card_title">Total students</span>
+                  <span class="d_stat_card_count">400</span>
+                </div>
+              </div>
+              <div class="d_stat_card">
+                <div class="d_stat_card_avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="d_stat_card_info">
+                  <span class="d_stat_card_title">Total students</span>
+                  <span class="d_stat_card_count">400</span>
+                </div>
+              </div>
+              <div class="d_stat_card">
+                <div class="d_stat_card_avatar">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="d_stat_card_info">
+                  <span class="d_stat_card_title">Total students</span>
+                  <span class="d_stat_card_count">400</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row d_table">
+            <span class="d_table_title">Student Wise report</span>
+            <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Student name</th>
+                  <th scope="col">Passed/Failed</th>
+                  <th scope="col">Marks</th>
+                  <th scope="col">Percentage</th>
+                  <th scope="col">Edit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Somesh Somani</th>
+                  <td><span class="r_pass">Pass</span></td>
+                  <td>450 / 550</td>
+                  <td>95</td>
+                  <td>
+                    <div class="edit_btn" onclick="showEditResult()">Edit</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Somesh Somani</th>
+                  <td><span class="r_fail">Fail</span></td>
+                  <td>450 / 550</td>
+                  <td>95</td>
+                  <td>
+                    <div class="edit_btn" onclick="showEditResult()">Edit</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- reuslt component -->
+        <div class="result" id="component">
+          <div class="r_upper">
+            <div class="r_upper_left">
+              <span class="r_name">Name: Semester 4</span>
+              <span class="r_program">Program: Computer Science</span>
+            </div>
+            <div class="r_upper_right">
+              <span class="r_enroll"
+                ><button class="s_add" onclick="showAddResult()">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </span>
+              <span class="r_exam">Examination: ODD 2019</span>
+            </div>
+          </div>
+          <div class="r_lower">
+            <div class="r_results">
+              <table class="table table-hover table-dark r_results">
+                <thead>
+                  <tr>
+                    <th scope="col">Enroll No</th>
+                    <th scope="col">Student name</th>
+                    <th scope="col">Passed/Failed</th>
+                    <th scope="col">Marks</th>
+                    <th scope="col">Percentage</th>
+                    <th scope="col">Edit</th>
+                  </tr>
+                </thead>
+                <tbody id="student_result_list">
+                  <!-- <tr>
+                    <th>Somesh Somani</th>
+                    <td><span class="r_pass">Pass</span></td>
+                    <td>450 / 550</td>
+                    <td>95</td>
+                    <td>
+                      <button class="edit_btn" onclick="showEditResult()">
+                        Edit
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Somesh Somani</th>
+                    <td><span class="r_fail">Fail</span></td>
+                    <td>450 / 550</td>
+                    <td>95</td>
+                    <td>
+                      <button class="edit_btn" onclick="showEditResult()">
+                        Edit
+                      </button>
+                    </td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- subject component -->
+        <div class="subjects" id="component">
+          <div class="s_upper">
+            <span class="s_title">Courses</span>
+            <button class="s_add" onclick="showAddNewSubjectDisplay()">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <div class="s_table">
+            <table class="table table-dark table-hover s_table">
+              <thead>
+                <tr>
+                  <th scope="col">Sr. No</th>
+                  <th scope="col">Course Code</th>
+                  <th scope="col">Course Name</th>
+                  <th scope="col">Pre-requisites</th>
+                  <th scope="col">Credit</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="course_list">
+                <!-- <tr>
+                  <th scope="row">1</th>
+                  <td>CM2101</td>
+                  <td>JAVA 1</td>
+                  <td>Otto</td>
+                  <td>Otto</td>
+                  <td>
+                    <span class="s_status_pending">Waiting for approval</span>
+                  </td>
+                  <td><i class="fas fa-trash"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>CM2101</td>
+                  <td>JAVA 1</td>
+                  <td>Otto</td>
+                  <td>Otto</td>
+                  <td><span class="s_status_registered">Approved</span></td>
+                  <td><i class="fas fa-trash"></i></td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- information about the student component -->
+        <div class="info" id="component">info</div>
+      </div>
+      <!-- <div class="s" style="width: 300px"></div> -->
+    </div>
+
+    <!-- form modal to add new subject -->
+    <div class="form_card" id="add_new_subject">
+      <div class="form_header">
+        <span class="form_title">Add new subject</span>
+        <button class="close_icon" onclick="showAddNewSubjectDisplay()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="form_body">
+        <form
+          class="form_body"
+          id="add_new_subject_form"
+          onsubmit="addNewCourse()"
+        >
+          <input
+            type="text"
+            name="course_code"
+            placeholder="Course Code"
+            class="form_input"
+            required
+          />
+          <input
+            type="text"
+            name="course_name"
+            placeholder="Course Name"
+            class="form_input"
+            required
+          />
+          <input
+            type="text"
+            name="pre_requisites"
+            placeholder="Pre-requisites if any"
+            class="form_input"
+          />
+          <input
+            type="text"
+            name="t_marks"
+            placeholder="Theory marks"
+            class="form_input"
+          />
+          <input
+            type="text"
+            name="p_marks"
+            placeholder="Practical marks"
+            class="form_input"
+          />
+          <input
+            type="text"
+            name="credits"
+            placeholder="Credits"
+            class="form_input"
+            required
+          />
+          <div class="form_button_container">
+            <button class="form_button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- form modal to add new result -->
+    <div class="form_card" id="add_result">
+      <div class="form_header">
+        <span class="form_title">Add result</span>
+        <button class="close_icon" onclick="showAddResult()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="form_body">
+        <form class="form_body" onsubmit="addResult()" id="result_form">
+          <div class="form_reuslt_details">
+            <input
+              type="text"
+              name="enroll_no"
+              placeholder="Enrollment number"
+              id="enroll_no"
+              class="form_input"
+              value="1906124"
+              required
+            />
+            <button
+              class="form_button"
+              type="button"
+              onclick="getCoursesOfEnrollment()"
+            >
+              Procced
+            </button>
+          </div>
+          <div class="form_result_subjects" id="form_result_subjects">
+            <h2>Enter the course marks</h2>
+            <table class="table table-hoverable">
+              <thead>
+                <tr>
+                  <th scope="col">Course code</th>
+                  <th scope="col">Course name</th>
+                  <th scope="col">Pratical marks</th>
+                  <th scope="col">Theory marks</th>
+                </tr>
+              </thead>
+              <tbody id="result_subjects_list">
+                <!-- <tr>
+                  <td scope="row">CM!@0</td>
+                  <td>Java programming</td>
+                  <td>
+                    <input
+                      type="text"
+                      name="course_name"
+                      placeholder="Course Name"
+                      class="form_input"
+                      required
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="course_name"
+                      placeholder="Course Name"
+                      class="form_input"
+                      required
+                    />
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+            <div class="form_button_container">
+              <button class="form_button">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- form modal to edit the result of student -->
+    <div class="form_card" id="edit_result">
+      <div class="form_header">
+        <span class="form_title">Edit result</span>
+        <button class="close_icon" onclick="showEditResult()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="form_body" id="edit_result_form">
+        <form class="form_body">
+          <input
+            type="text"
+            name="course_code"
+            placeholder="Course Code"
+            class="form_input"
+            required
+          />
+          <input
+            type="text"
+            name="course_name"
+            placeholder="Course Name"
+            class="form_input"
+            required
+          />
+          <input
+            type="text"
+            name="pre_requisites"
+            placeholder="Pre-requisites if any"
+            class="form_input"
+          />
+          <input
+            type="text"
+            name="credits"
+            placeholder="Credits"
+            class="form_input"
+            required
+          />
+          <div class="form_button_container">
+            <button class="form_button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- bootstrap js links -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- link for chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <script src="./script.js"></script>
+    <script>
+      // ajax function for logout
+      function logout() {
+        let formData = {
+          logout: true,
+        };
+        $.ajax({
+          type: "POST",
+          url: "../backend/login.php",
+          data: formData,
+        }).done((data) => {
+          if (data) {
+            location.href = "../";
+          } else {
+            alert("Error occured please try again");
+          }
+          // console.log(data);
+        });
+      }
+    </script>
+  </body>
+</html>

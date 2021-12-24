@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student dashboard</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2862b9c025.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- style file -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container-fluid main">
+      <div class="sidebar">
+        <div class="brand_container">
+          <div class="brand">
+            <i class="fab fa-audible logo"></i>
+            <div class="brand_name">EDU</div>
+          </div>
+          <i class="fas fa-bars" id="menu"></i>
+        </div>
+        <ul class="nav_list">
+          <div>
+            <li>
+              <a href="#" onclick="display(0)">
+                <i class="fas fa-th-large"></i>
+                <span class="link_name">Dashboard</span>
+              </a>
+              <span class="tip">Dashboard</span>
+            </li>
+            <li>
+              <a href="#" onclick="display(1)">
+                <i class="fas fa-poll"></i>
+                <span class="link_name">Result</span>
+              </a>
+              <span class="tip">Result</span>
+            </li>
+            <li>
+              <a href="#" onclick="display(2)">
+                <i class="fas fa-swatchbook"></i>
+                <span class="link_name">Courses</span>
+              </a>
+              <span class="tip">Courses</span>
+            </li>
+          </div>
+          <!-- <li>
+<a href="#" onclick="display(3)">
+              <i class="fas fa-info"></i>
+              <span class="link_name">Information</span>
+            </a>
+            <span class="tip">Information</span>
+          </li> -->
+
+          <div>
+            <li class="logout">
+              <a href="#" id="logout">
+                <i class="fas fa-power-off" onclick="logout()"></i>
+                <span class="link_name">Logout</span>
+              </a>
+              <span class="tip">Logout</span>
+            </li>
+          </div>
+        </ul>
+        <!-- <div class="logout">
+          <i class="fas fa-power-off logout_icon"></i>
+          <span class="logout_text">Logout</span>
+        </div> -->
+      </div>
+      <div class="right">
+        <!-- dashboard component -->
+        <div class="dashboard" id="component">
+          <div class="d_user_box"></div>
+          <div class="row d_chart">
+            <div class="col-sm-6">
+              <table class="table table-dark table-hover" id="subject_table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Subjects</th>
+                    <th scope="col"></th>
+                    <!-- <th scope="col">Last</th>
+                    <th scope="col">Handle</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Bio</th>
+                    <td>
+                      <div class="progress_bar">
+                        <div
+                          class="progress_inner"
+                          style="width: 40%; background-color: #d9534f"
+                        >
+                          40%
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Maths</th>
+                    <td>
+                      <div class="progress_bar">
+                        <div
+                          class="progress_inner"
+                          style="width: 90%; background-color: #5cb85c"
+                        >
+                          90%
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">English</th>
+                    <td>
+                      <div class="progress_bar">
+                        <div
+                          class="progress_inner"
+                          style="width: 70%; background-color: #f0ad4e"
+                        >
+                          70%
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table
+                class="table table-dark table-hover"
+                id="previous_result_table"
+              >
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Previous results</th>
+                    <th scope="col"></th>
+                    <!-- <th scope="col">Last</th>
+                    <th scope="col">Handle</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Semester 1</th>
+                    <td>
+                      <div class="progress_bar">
+                        <div
+                          class="progress_inner"
+                          style="width: 40%; background-color: #d9534f"
+                        >
+                          40%
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Semester 2</th>
+                    <td>
+                      <div class="progress_bar">
+                        <div
+                          class="progress_inner"
+                          style="width: 90%; background-color: #5cb85c"
+                        >
+                          90%
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Semester 3</th>
+                    <td>
+                      <div class="progress_bar">
+                        <div
+                          class="progress_inner"
+                          style="width: 70%; background-color: #f0ad4e"
+                        >
+                          70%
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Semester 4</th>
+                    <td>
+                      <div class="progress_bar">
+                        <div
+                          class="progress_inner"
+                          style="width: 95%; background-color: #5cb85c"
+                        >
+                          95%
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-sm-6">
+              <div class="d_events">
+                <div class="d_events_title">Events</div>
+                <div class="d_events_container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- reuslt component -->
+        <div class="result" id="component">
+          <div class="r_upper">
+            <div class="r_upper_left">
+              <span class="r_name" id="r_name"></span>
+              <span class="r_program" id="r_semester"></span>
+            </div>
+            <!-- <div class="r_upper_right">
+              <span class="r_enroll">Enrollment no: 1906124</span>
+              <span class="r_exam">Examination: ODD 2019</span>
+            </div> -->
+          </div>
+          <div class="r_lower">
+            <div class="r_current_result_table">
+              <table
+                class="table table-hover table-dark r_current_result_table"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col">Sr. No.</th>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">COurse Name</th>
+                    <th scope="col">Passed/Failed</th>
+                    <th scope="col">Practical Marks</th>
+                    <th scope="col">Theory Marks</th>
+                    <th scope="col">Total Marks</th>
+                    <th scope="col">Grade</th>
+                  </tr>
+                </thead>
+                <tbody id="result_current_year_list">
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td><span class="r_pass">Passed</span></td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td><span class="r_grade_exellent">Excellent</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td><span class="r_fail">Failed</span></td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td><span class="r_grade_poor">Poor</span></td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- subject component -->
+        <div class="subjects" id="component">
+          <div class="s_title">List of courses</div>
+          <div class="s_table">
+            <table class="table table-dark table-hover s_table">
+              <thead>
+                <tr>
+                  <th scope="col">Sr. No</th>
+                  <th scope="col">Course Code</th>
+                  <th scope="col">Course Name</th>
+                  <th scope="col">Pre-requisites</th>
+                  <th scope="col">Credit</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="courses_list">
+                <!-- <tr>
+                  <th scope="row">1</th>
+                  <td>CM2101</td>
+                  <td>JAVA 1</td>
+                  <td>Otto</td>
+                  <td>Otto</td>
+                  <td><span class="s_status_pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>CM2101</td>
+                  <td>JAVA 1</td>
+                  <td>Otto</td>
+                  <td>Otto</td>
+                  <td><span class="s_status_registered">Registered</span></td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- information about the student component -->
+        <div class="info" id="component">info</div>
+      </div>
+      <!-- <div class="s" style="width: 300px"></div> -->
+    </div>
+
+    <!-- bootstrap js links -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./script.js"></script>
+    <script>
+      window.onload = function () {
+        getUserDetails();
+        getEvents();
+      };
+
+      // ajax function for logout
+      function logout() {
+        let formData = {
+          logout: true,
+        };
+        $.ajax({
+          type: "POST",
+          url: "../backend/login.php",
+          data: formData,
+        }).done((data) => {
+          if (data) {
+            location.href = "../";
+          } else {
+            alert("Error occured please try again");
+          }
+          // console.log(data);
+        });
+      }
+    </script>
+  </body>
+</html>
